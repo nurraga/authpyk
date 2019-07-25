@@ -1,0 +1,13 @@
+{
+    "name": "authpyk/ac",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Nur Raga",
+            "email": "nurraga@users.noreply.github.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {}
+}
