@@ -26,7 +26,7 @@ Add the facade aliases in your app configuration file config/app.php `config/app
 Use this to get access on your module controller:
 
 ```
-CheckAccess::module(trim(substr((new \ReflectionClass($this))->getShortName(),0),'Controller'),__FUNCTION__);
+CheckAccess::module(str_replace('Controller','',substr((new \ReflectionClass($this))->getShortName(), 0)), __FUNCTION__);
 ```
 
 Or you can overwrite the first and the second parameter:
@@ -40,8 +40,8 @@ CheckAccess::module('moduleName','functionName');
 ```
   public function index()
   {
-      $accessControl =  CheckAccess::module(trim(substr((new \ReflectionClass($this))->getShortName(),0),'Controller'),__FUNCTION__);
-        
+      $accessControl = CheckAccess::module(str_replace('Controller','',substr((new \ReflectionClass($this))->getShortName(), 0)), __FUNCTION__);
+
         if($accessControl){
          
             $access = 'Access granted';
