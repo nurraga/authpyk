@@ -12,7 +12,7 @@ Require it from "composer":
 
 	$ composer require authpyk/ac
 
-Add the facade aliases in your app configuration file config/app.php `config/app.php`:
+Add the facade aliases in your app configuration file `config/app.php`:
 
 ```
 'aliases' => [
