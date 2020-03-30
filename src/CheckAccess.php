@@ -17,6 +17,8 @@ class CheckAccess
 
         $access_data = json_decode(session('ACCESS_DATA'));
 
+        $access_identitas = json_decode(session('ACCESS_IDENTITAS'));
+
         $acc_app = false;
 
         $acc_modul = false;
@@ -49,9 +51,49 @@ class CheckAccess
 
                 } else {
 
-                    if ($ad->nama_function == $function) {
+                    if ($ad->nama_function == $function && $ad->nama_modul == $modul) {
 
                         if ($ad->status == 1) {
+
+                            $acc_func = true;
+
+                        }
+
+                    }
+
+                }
+
+            }
+
+        }
+
+        if ($access_identitas != null) {
+
+            foreach ($access_identitas as $ai) {
+
+                if ($ai->kode_aplikasi == $app_code) {
+
+                    $acc_app = true;
+                }
+
+                if ($ai->nama_modul == $modul) {
+
+                    $acc_modul = true;
+                }
+
+                if ($ai->nama_function == '*') {
+
+                    if ($ai->status == 1) {
+
+                        $acc_func = true;
+
+                    }
+
+                } else {
+
+                    if ($ai->nama_function == $function && $ai->nama_modul == $modul) {
+
+                        if ($ai->status == 1) {
 
                             $acc_func = true;
 
