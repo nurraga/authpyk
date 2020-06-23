@@ -17,9 +17,24 @@ Add the facade aliases in your app configuration file `config/app.php`:
 ```
 'aliases' => [
 	      ...
-        'CheckAccess' => Authpyk\AC\CheckAccess::class,
+        'CheckAccess' => Authpyk\Ac\CheckAccess::class,
 ]
 ```
+
+## Autoloading
+
+By default the Authpyk classes are not loaded automatically. You can autoload your modules using psr-4. For example:
+```
+{
+  "autoload": {
+    "psr-4": {
+      "App\\": "app/",
+      "Authpyk\\AC\\": "packages/authpyk/ac/src"
+    }
+  }
+}
+```
+Tip: don't forget to run composer dump-autoload afterwards.
 
 ## Basic Usage
 
