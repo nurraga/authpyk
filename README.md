@@ -34,7 +34,7 @@ By default the Authpyk classes are not loaded automatically. You can autoload yo
   }
 }
 ```
-Tip: don't forget to run composer ```dump-autoload``` afterwards.
+Tip: don't forget to run ```composer dump-autoload``` afterwards.
 
 ## Basic Usage
 
